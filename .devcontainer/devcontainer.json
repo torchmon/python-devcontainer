@@ -1,0 +1,45 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "Python 3.12",
+	"image": "mcr.microsoft.com/devcontainers/python:3.12",
+	// "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
+	"features": {
+		"ghcr.io/devcontainers-contrib/features/poetry:2": {
+			"version": "1.7.1" // ここを追加
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"charliermarsh.ruff",
+				// ruffで代替できるので不要
+				// "ms-python.vscode-pylance",
+				// "ms-python.pylint",
+				// "ms-python.isort",
+				// "ms-python.flake8",
+				// "ms-toolsai.jupyter",
+				// "ms-python.black-formatter",
+				//
+				"ms-python.mypy-type-checker",
+				// "visualstudioexptteam.vscodeintellicode",
+				"njpwerner.autodocstring",
+				"donjayamanne.githistory"
+			],
+			"settings": {
+				"python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+				"python.venvFolders": [
+					"${workspaceFolder}/.venv"
+				],
+				"python.envFile": "${workspaceFolder}/.python-env",
+				"ruff.organizeImports": true,
+				"ruff.format.args": [
+					"--config=pyproject.toml"
+				],
+				"editor.formatOnSave": true,
+				"extensions.verifySignature": false
+			}
+		}
+	}
+}

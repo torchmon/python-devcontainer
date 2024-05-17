@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "python-dev-template"
+version = "0.1.0"
+description = ""
+authors = ["s-fujimoto"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^2.2.3"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.2"
+black = "^23.3.0"
+pylint = "^2.17.1"
+flake8 = "^6.0.0"
+isort = "^5.12.0"
+ipykernel = "^6.22.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.ruff.lint]
+select = [
+  "ALL"
+]
+
+[tool.ruff.lint.flake8-quotes]
+inline-quotes = "single"
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.ruff]
+# Same as Black.
+line-length = 88
+indent-width = 4
+
+[tool.ruff.format]
+quote-style = "single"
